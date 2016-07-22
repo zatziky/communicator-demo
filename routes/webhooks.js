@@ -1,6 +1,6 @@
+var CommunicatorApi = require('../helpers/communicator');
 var express = require('express');
 var router = express.Router();
-
 /* POST to webhooks.
 * */
 /*
@@ -28,9 +28,10 @@ router.post('/communicator', function(req, res, next) {
       var message = req.body.messaging[i];
       // authentication webhook
       if (message.auth) {
-        // send required bill
+        // ref data can be used for matching the user in your database
         console.log("callback ref data: " + message.auth.ref);
-        // TODO
+        // send required bill
+        CommunicatorApi.send(message.sender.id, "Here is your ticket number: 23491282");
       }
     }
   }

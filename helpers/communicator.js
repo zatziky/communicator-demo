@@ -2,7 +2,7 @@ var request = require('request');
 
 var CommunicatorApi = {
   _API_URL: "https://leafdock.com/api/v1/",
-  _oAuthToken: "secret_token123",
+  _oAuthToken: process.env.COMMUNICATOR_OAUTH_TOKEN,
 
   send: function (customerId, message) {
     request.post({

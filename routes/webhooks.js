@@ -30,7 +30,7 @@ router.post('/communicator', function(req, res, next) {
       if (message.auth) {
         // ref data can be used for matching the user in your database
         console.log("callback ref data: " + message.auth.ref);
-        // send required bill
+        // send required ticket
         CommunicatorApi.send(message.sender.id, "Here is your ticket number: 23491282");
       }
     }

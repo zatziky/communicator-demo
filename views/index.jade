@@ -1,5 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  script.
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: "1806054702946735",
+        xfbml: true,
+        version: "v2.6"
+      });
+
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  h1= "Welcome to Communicator Demo"
+  p You can start with sending your ticket to facebook messenger.
+  div(class="fb-send-to-messenger", messenger_app_id="1806054702946735", page_id=facebookPageId, color="blue",
+  size="large", data-ref="SOME_ENCODED_DATA")

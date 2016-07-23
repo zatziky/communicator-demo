@@ -1,6 +1,9 @@
 # Bower
 public/components
 
+# Sass
+public/stylesheets
+
 # Created by .ignore support plugin (hsz.mobi)
 ### SASS template
 .sass-cache/

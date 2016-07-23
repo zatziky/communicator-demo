@@ -2,11 +2,12 @@ var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
   plumber = require('gulp-plumber'),
   livereload = require('gulp-livereload'),
-  sass = require('gulp-ruby-sass');
+  sass = require('gulp-sass');
 
 gulp.task('sass', function () {
-  return sass('./public/css/**/*.scss')
-    .pipe(gulp.dest('./public/css'))
+  return gulp.src('./public/css/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./public/stylesheets'))
     .pipe(livereload());
 });
 

@@ -18,4 +18,4 @@ API calls to Leafdock communicator. It also can be found in backend
 application.
 
 ### Run
-`gulp develop`
+`gulp`

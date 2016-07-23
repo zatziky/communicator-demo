@@ -19,3 +19,8 @@ application.
 
 ### Run
 `gulp`
+
+## Docker
+There is an official
+[docker image](https://hub.docker.com/r/envelon/communicator-demo/)
+for this application.

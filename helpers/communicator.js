@@ -15,9 +15,7 @@ var CommunicatorApi = {
         "recipient": {
           "id": customerId
         },
-        "message": {
-          "text": message
-        }
+        "message": message
       }
     }, function (error, response, body) {
       if (!error) {

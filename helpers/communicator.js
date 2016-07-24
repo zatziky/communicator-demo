@@ -9,15 +9,27 @@ var CommunicatorApi = {
       url: this._API_URL + "messages",
       headers: {
         "Authorization": "Bearer " + this._oAuthToken,
-        "Content-Type": "application/json"
+      },
+      json: true,
+      body: {
+        "recipient": {
+          "id": customerId
+        },
+        "message": {
+          "text": message
+        }
       }
     }, function (error, response, body) {
-      if (response.statusCode >= 400) {
-        console.log("error sending message to customer " + customerId);
-        console.log(response.statusCode, JSON.parse(body));
+      if (!error) {
+        if (response.statusCode >= 400) {
+          console.log("error sending message to customer " + customerId);
+          console.log(response.statusCode, body);
+        } else {
+          console.log("message successfully sent to customer " + customerId + " with http status code " +
+            response.statusCode, body);
+        }
       } else {
-        console.log("message successfully sent to customer " + customerId + " with http status code " +
-          response.statusCode + " and body " + JSON.parse(body));
+        console.log("error while sending message to customer", error);
       }
     })
   }

@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-        "Name": "envelon/communicator-demo:0.1.2",
+        "Name": "envelon/communicator-demo:0.1.4",
         "Update": "true"
     },
     "Ports": [

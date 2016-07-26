@@ -29,4 +29,4 @@ deployment:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push envelon/communicator-demo:$CIRCLE_SHA1
       # deploy to aws
-      - ./aws/deploy.sh
+      - ./aws/deploy.sh $CIRCLE_SHA1

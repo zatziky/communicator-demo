@@ -2,14 +2,6 @@ machine:
   services:
     - docker
 
-general:
-  artifacts:
-    - bin
-    - helpers
-    - public
-    - routes
-    - views
-
 dependencies:
   pre:
     # install aws cli

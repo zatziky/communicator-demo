@@ -32,8 +32,8 @@ router.post('/communicator', function(req, res, next) {
         console.log("callback ref data: " + message.auth.ref);
         // send required ticket
         CommunicatorApi.send(message.sender.id, {
-          "text": "Diky za zakoupeni jizdenky! Vyuzivame messenger pro to, abychom mohli nasim zakaznikum poskytovat " +
-              "stale lepsi servis. Pokud na nas mate nejaky dotaz, nevahejte nam tedy napsat primo zde. Vas Regio JET :-)",
+          "text": "Díky za zakoupení jízdenky! Využíváme messenger pro to, abychom mohli našim zakazníkům poskytovat " +
+              "stále lepší servis. Pokud na nás máte nějaký dotaz, neváhejte nám tedy napsat přímo zde. Váš Regio JET :-)",
           "attachment": {
             "type": "template",
             "payload": {

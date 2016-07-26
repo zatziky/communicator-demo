@@ -13,6 +13,10 @@ dependencies:
     - docker info
     - docker build -t envelon/communicator-demo:$CIRCLE_SHA1 .
 
+test:
+  override:
+    - echo "Do not execute tests."
+
 deployment:
   production:
     branch: master

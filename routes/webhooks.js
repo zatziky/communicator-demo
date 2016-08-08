@@ -1,10 +1,10 @@
 var CommunicatorApi = require('../helpers/communicator');
 var express = require('express');
 var router = express.Router();
-/* POST to webhooks.
-* */
 /*
- POST to webhooks. Message in format of:
+ POST to webhooks (webhook url can be set in leafdock.com app to any address of your choice
+ i.e. https://my-app.com/leafdock-webhook, '/communicator' entry point here is just our
+ custom implementation for this example). Received message is in following format:
   {
     "project": {
       "id": "PROJECT_ID"
